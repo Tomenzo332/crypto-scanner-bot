@@ -343,7 +343,7 @@ async def handle_token_address(update: Update, context: CallbackContext) -> None
     if not re.match(r"^0x[a-fA-F0-9]{40}$|^[1-9A-HJ-NP-Za-km-z]{32,44}$", token_address):
         await update.message.reply_text(
             "❌ Invalid address format. Please provide a valid wallet address or token name.",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Start Over 🔄", callback_data='start')]]))
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Go Back to Main Menu", callback_data='go_back_to_menu')]]))
         return
 
     # Store the token address in context
@@ -408,7 +408,7 @@ async def handle_token_address(update: Update, context: CallbackContext) -> None
     if not re.match(r"^0x[a-fA-F0-9]{40}$|^[1-9A-HJ-NP-Za-km-z]{32,44}$", token_address):
         await update.message.reply_text(
             "Invalid address format. Please provide a valid wallet address or token name.",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Start Over", callback_data='start')]]))
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Go Back to Main Menu", callback_data='go_back_to_menu')]]))
         return
 
     # Store the token address in context
